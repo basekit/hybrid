@@ -1,0 +1,99 @@
+// ---------------------------
+// Sky:  widget-gallery.less
+// ---------------------------
+
+
+// Gallery 3 column layout
+// -----------------------
+
+// Title and description colour
+.image-title,
+.image-description {
+    color: @color-swatch1;
+}
+
+
+// Gallery list container
+.gallery-list {
+    .flex(@display: flex);
+    .justify-content(@justify: space-between);
+    .flex-wrap(@wrap: wrap);
+}
+
+
+// Gallery items
+.gallery .gallery-item {
+    position: relative;
+    width: 32%;
+    margin-bottom: 20px;
+    // Display 100% at mobile
+    @media @bp-mobile {
+        width: 100%;
+    }
+}
+
+
+// Gallery item links
+.gallery .image-link {
+    display: block;
+    height: 280px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @media @bp-tablet {
+        height: 210px;
+    }
+}
+
+
+// Gallery hide img element (uses background cover technique)
+.gallery .image {
+    display: none;
+}
+
+
+// Gallery caption
+.gallery .caption {
+    display: none;
+    margin: 0;
+    padding: 20px;
+    background-color: hsla(hue(@color-swatch7), saturation(@color-swatch7), lightness(@color-swatch7), 0.8);
+}
+
+
+// Gallery show caption on hover
+.gallery .figure:hover .caption {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+}
+
+
+// Responsive
+// -----------------------
+
+
+.responsivecolumns .columns-two-left,
+.responsivecolumns .columns-two-right {
+
+
+    .gallery-item {
+        width: 48%;
+    }
+ }
+
+
+.responsivecolumns .columns-three-left,
+.responsivecolumns .columns-three-middle,
+.responsivecolumns .columns-three-right,
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+
+
+    .gallery-item {
+        width: 100%;
+    }
+}

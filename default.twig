@@ -1,22 +1,27 @@
-
 {% extends "layout.twig" %}
+
 {% block content %}
 
+<div class="bk-pt-default">
 
-<!-- Header -->
-{% include "includes/header.twig" %}
+    <div class="main-content">
 
+        {% include "includes/header.twig" %}
 
-<div class="template-container">
+        <!-- Page Content -->
+        <section class="template-content">
+            <div class="container">
 
-    <!-- Main Zone -->
-    {{zone('main')|raw}}
+                {{zone('main')|raw}}
+
+            </div>
+
+        </section>
+
+    </div>
+
+    {% include "includes/footer.twig" %}
 
 </div>
-
-
-<!-- Footer -->
-{% include "includes/footer.twig" %}
-
 
 {% endblock %}

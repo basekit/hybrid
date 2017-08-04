@@ -1,0 +1,269 @@
+// --------------------------------
+// Sky: template.less
+// --------------------------------
+
+// Contains various global layout styles.
+
+
+
+// -----------------------------
+// 2. Media Queries
+// -----------------------------
+
+@bp-large: ~"only screen and (max-width: 1400px)";
+@bp-desktop: ~"only screen and (max-width: 1024px)";
+@bp-tablet: ~"only screen and (max-width: 800px)";
+@bp-mobile: ~"only screen and (max-width: 600px)";
+
+
+
+
+// -----------------------------
+// 3. Typography
+// -----------------------------
+
+
+// Anchor links
+a {
+    color: @color__link--text;
+}
+
+
+
+
+// -----------------------------
+// 3. Global Styles
+// -----------------------------
+
+
+// Body
+// ---------------
+
+body {
+    background: @bg-color;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+// Stops mobile scrolling of the body - only the nav is scrollable
+.noscroll {
+    overflow: hidden;
+    height: 100%;
+    max-height: 100vh;
+}
+
+
+
+
+// Container
+// ---------------
+
+.feature-container {
+    position: relative;
+}
+
+.container,
+.bk-pt-home .template-footer {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0px 5% 0px;
+    @media @bp-desktop {
+        padding: 0px 5% 0px;
+    }
+    @media @mobile {
+        padding: 0px 3% 0px;
+    }
+}
+
+.template-footer {
+    padding: 0;
+}
+
+.blog-post-container {
+    width: 60%;
+    margin: 0 auto;
+
+    @media @bp-tablet {
+        width: 100%;
+    }
+}
+
+.homepage-info {
+    background-color: fade(#ffffff,20%);
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: 99999;
+    padding: 20px 0 10px;
+    h1, h2, h3, h4, p, a, span {
+        color: @color__feature-strapline--text;
+    }
+    @media @bp-desktop {
+        padding: 10px 0 0px;
+    }
+    @media @mobile {
+        padding: 10px 0 0px;
+    }
+}
+
+
+// -----------------------------
+// 4. Page Layout
+// -----------------------------
+
+
+.template-content {
+
+    &.blog-post-container {
+        background-color: @color-swatch1;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+}
+
+
+
+// Tpl Hidden
+// -----------------------------
+
+.widget[data-widget-type="feature"].bk-tpl-hidden + .template-header {
+    position: relative;
+    background-color: @color__footer--background;
+    .header-wrapper {
+        padding: 0 10% 0px;
+    }
+}
+
+
+// Feature Overlay Options
+// ------------------------------
+
+[data-widget-type="feature"] ul.widget__list.list--options {
+    position: absolute;
+    top: 45%;
+}
+
+.template-content {
+    padding-top: 70px;
+    padding-bottom: 50px;
+
+    @media @tablet {
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+}
+
+
+
+
+// -----------------------------
+// 5. Footer
+// -----------------------------
+
+.outer-footer {
+    background-color: #eeeeee;
+}
+
+.footer-left {
+    .flex-order(@order: 0);
+    .fleX(1 1 50%);
+    .align-self(@align: auto);
+    padding-right: 30px;
+    text-align: left;
+
+    @media @bp-mobile {
+        padding-left: 0;
+    }
+}
+
+.footer-right {
+    .flex-order(1);
+    .align-self(auto);
+    .flex(@display: flex);
+    .justify-content(@justify: flex-end);
+}
+
+
+.template-footer {
+    padding: 15px 0% 15px;
+    background-color: @color__footer--background;
+
+
+    // Content widget margin to stop crashing
+    [data-widget-type="content"] {
+        margin-right: 20px;
+    }
+
+    p,
+    .social-link,
+    a,
+    h1, h2, h3, h4, span {
+        color: #fff;
+    }
+
+    .social-link {
+        font-size: 26px;
+    }
+
+    .signupform__legend {
+        padding: 0;
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        position: relative;
+    }
+
+    .signupform__form-body {
+        width: inherit;
+    }
+
+    .signupform__form-group {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+
+    .signupform__label {
+        display: none;
+    }
+
+    .twitter .tweet-item {
+        min-height: inherit;
+        text-align: left;
+        padding: 0;
+    }
+
+    .twitter .tweet-item .account-name:before {
+        display: none;
+    }
+
+    .signupform__button {
+        color: #fff;
+        &:after {
+            color: #fff;
+        }
+        &:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+    }
+
+    .profile__map {
+        width: 400px;
+    }
+
+    @media @bp-desktop {
+        display: block;
+        text-align: center;
+        padding: 10px 5% 10px;
+    }
+
+    @media @bp-mobile {
+        padding: 10px 3% 10px;
+    }
+}

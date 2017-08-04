@@ -1,174 +1,23 @@
+// ---------------------
+// Mono:  Main Styles
+// ---------------------
 
 // -----------------------------
-// Table of Contents
-// -----------------------------
-
-//  LESS Includes
-//    - BK LESS Framework
-//    - Base Styles
-//    - Widgets
-//    - Plugins
-//    - Pages
-
-
-//  Theme Styles
-//    - Header
-//    - Main
-
-
-
-
-
-// -----------------------------
-//  LESS Includes
+// 1. LESS Includes
 // -----------------------------
 
 
+@import "@{templateCommon}/bk-less-framework-v8.less";              // BK LESS Framework
 
+@import "@{templateLocal}/less/v8-variables.less";                  // V8 Variable conversion
 
-// BK LESS Framework
-// ------------------
+@import "@{templateLocal}/less/template.less";                      // Template positioning styles
+@import "@{templateLocal}/less/variables-mixins.less";              // Variables
 
-@import "@{templateCommon}/bk-less-framework-v8.less";                      // V8 Framework
+@import "@{templateLocal}/less/widgets/widgets-all.less";           // Widgets > All
+@import "@{templateLocal}/less/widgets/widget-gallery.less";        // Widgets > Gallery
+@import "@{templateLocal}/less/widgets/widget-navigation.less";     // Widgets > Navigation
 
-
-
-
-// Base Styles
-// --------------
-
-@import "@{templateLocal}/stylesheets/base/mixins.less";                    // Mixins
-@import "@{templateLocal}/stylesheets/base/typography.less";                // Typography
-
-
-
-
-// Site Components
-// ------------------
-
-@import "@{templateLocal}/stylesheets/components/header.less";
-@import "@{templateLocal}/stylesheets/components/footer.less";
-
-
-
-
-// Widgets Styles
-// --------------
-
-@import "@{templateLocal}/stylesheets/components/navigation.less";         // Navigation
-@import "@{templateLocal}/stylesheets/widgets/gallery.less";               // Gallery
-@import "@{templateLocal}/stylesheets/widgets/forms.less";                 // Forms
-@import "@{templateLocal}/stylesheets/widgets/social.less";                // Social
-@import "@{templateLocal}/stylesheets/widgets/twitter.less";               // Twitter
-@import "@{templateLocal}/stylesheets/widgets/yelp.less";                  // Yelp
-@import "@{templateLocal}/stylesheets/widgets/line.less";                  // Line
-@import "@{templateLocal}/stylesheets/widgets/image.less";                 // Image
-@import "@{templateLocal}/stylesheets/widgets/slideshow.less";             // Slideshow
-
-
-
-
-// Plugin Styles
-// ----------------------
-
-@import "@{templateLocal}/stylesheets/plugins/blog-post-list.less";        // Blog Post List
-@import "@{templateLocal}/stylesheets/plugins/blog-post.less";             // Blog Post
-@import "@{templateLocal}/stylesheets/plugins/product.less";               // Ecom Product
-@import "@{templateLocal}/stylesheets/plugins/product-list.less";          // Ecom Product List
-
-
-
-
-// Page Specific Styles
-// ----------------------
-
-
-
-
-
-// -----------------------------
-//  Theme Styles
-// -----------------------------
-
-
-
-
-// Container
-// ---------------
-
-
-.widget--zone-widget {
-    margin-bottom: 20px;
-}
-
-
-.template-header + .template-container {
-
-    @media only screen and (max-width: 1024px) {
-        overflow: hidden;
-        position: relative;
-    }
-}
-
-
-.template-container {
-    margin: 0 auto;
-    max-width: 1200px;
-
-    @media only screen and (max-width: 1330px) {
-        padding: 0 65px;
-    }
-
-    @media @tablet-860 {
-        padding: 0 60px;
-    }
-
-    @media @mobile-650 {
-        padding: 0 30px;
-    }
-}
-
-
-.template-container #page-zones__main {
-
-    > .widget:first-child {
-        padding-top: 50px;
-
-        @media @mobile-650 {
-            padding-top: 0;
-        }
-    }
-
-
-    > .widget:first-child[data-name="map"],
-    > .widget:first-child[data-name="image"],
-    > .widget:first-child[data-name="slideshow"],
-    > .widget:first-child[data-name="youtube"],
-    > .widget:first-child[data-name="blogpost"],
-    > .widget:first-child[data-name="ecomproduct"] {
-        padding-top: 0;
-    }
-}
-
-
-.responsivecolumns .columns-four-first,
-.responsivecolumns .columns-four-second,
-.responsivecolumns .columns-four-third,
-.responsivecolumns .columns-four-fourth {
-
-    @media only screen and (max-width: 1024px) {
-        margin-right: 3%;
-        width: 48.5%;
-
-
-        &:nth-child(even) {
-            margin-right: 0;
-        }
-    }
-
-    @media only screen and (max-width: 650px) {
-        margin-right: 0;
-        width: 100%;
-    }
-}
-
+@import "@{templateLocal}/less/plugins/plugin-blog.less";           // Plugin > Blog
+@import "@{templateLocal}/less/plugins/plugin-menu.less";           // Plugin > Menu
+@import "@{templateLocal}/less/plugins/plugin-ecommerce.less";      // Plugin > Ecommerce

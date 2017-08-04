@@ -1,0 +1,25 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bk-pt-default blog-page">
+
+        <div class="main-content"><!-- adds sticky footer-->
+
+            {% include "includes/header.twig" %}
+
+            <!-- Page Content -->
+            <section class="template-content">
+
+                {{widget('blogpost', 'allblog', {})|raw}}
+
+            </section>
+            <!-- End Page Content -->
+
+        </div>
+
+        {% include "includes/footer.twig" %}
+
+</div>
+
+{% endblock %}

@@ -1,7 +1,28 @@
+<div class="outer-footer">
+    {{widget('map', 'googlemaps', {
+      'height': '300',
+      'zoom': '15',
+      'address': 'profile'
+    })|raw}}
+</div>
+
+<!-- Footer Text Widget -->
 <footer class="template-footer">
-    <div class="template-container">
-        {{widget('content', 'footer-copyright', {
-            content: '<p style="text-align: center;">© Copyright 2016</p>'
-        })|raw}}
+    <div class="footer-wrapper">
+
+        <div class="footer-left">
+
+            {{widget('content', 'footer-content', {
+            content: '<p>&copy; Copyright</p>'
+            })|raw}}
+
+        </div>
+
+        <div class="footer-right">
+        
+            {{widget('profile', 'footer-profile', { 'profileType':'socialicons' })|raw}}
+
+        </div>
+
     </div>
 </footer>

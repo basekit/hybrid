@@ -1,1 +1,2 @@
-# love
+# sky-template
+Amazon Japanese Template

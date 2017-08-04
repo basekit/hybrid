@@ -1,44 +1,55 @@
 <!doctype html>
-<html class="no-js  full-nav" lang="{{ page.seoLang }}">
+<html class="no-js" lang="{{ page.seoLang }}">
 
     <head>
         <meta charset="utf-8" />
         <title>{{ page.title }}</title>
         <meta name="keywords" content="{{ page.keywords }}" />
         <meta name="description" content="{{ page.description }}" />
-        <meta name="viewport" content="width=device-width,initial-scale=1">
 
         {% if site.favicon %}
             <link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
             <link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
         {% endif %}
+        <meta name="viewport" content="width=device-width,initial-scale=1">
 
         {% include basekit.headScript %}
-        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     </head>
 
     <body class="{{ page.backgroundClass }}">
 
-
         {% block content %}
         {% endblock %}
 
-
         {% include basekit.bodyScript %}
 
-
         <!-- jQuery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script nonce="{{ numberUsedOnce }}">
+            $(document).on('mq4hsChange', function (e) {
+                console.log(e);
+                $(document.documentElement).toggleClass('no-touch', e.trueHover);
+            });
+        </script>
+        <script src="{{asset('js/mq4-hover-shim.js')}}"></script>
 
+        <!-- Nav Menu Script -->
+        <script nonce="{{ numberUsedOnce }}">
 
-        <!-- Scripts -->
-        <script src="{{ asset('scripts/custom.js')}}"></script>
+            // Toggles class open to display/hide the whole navigation
+            $( ".navigation-toggle" ).click(function() {
+                $( ".bk-extendednavigation" ).toggleClass( "open" );
+                $( "body, html" ).toggleClass( "noscroll" );
+            });
 
+            // Toggles class open to display/hide folders
+            $( ".navigation-item.folder .item-name--parent" ).each(function() {
+                $( this ).click(function() {
+                        $( this ).parent( ".navigation-item.folder" ).toggleClass( "open-folder" );
+                });
+            });
 
-        <!-- Page Specific Scripts -->
-        {% block scripts %}
-        {% endblock %}
-
+        </script>
 
     </body>
 </html>

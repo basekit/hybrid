@@ -1,54 +1,54 @@
-
 {% extends "layout.twig" %}
-{% block class %}home-page{% endblock %}
+
 {% block content %}
 
+<div class="bk-pt-home">
 
-<!-- Header -->
-{% include "includes/header.twig" %}
+        <div class="main-content"><!-- adds sticky footer-->
 
+        <div class="feature-container">
 
-<div class="template-container">
+                {{widget('feature', 'featurehome', {
+                    "header": "profile",
+                    "strapline": "profile",
+                    "defaultBgImg": asset('images/feature-bg.jpg'),
+                    'positionTopPercentage': '0',
+                    'showBtn': true,
+                    buttonText: "Lorem Ipsum"
+                })|raw}}
+    
+                {% include "includes/header.twig" %}
+    
+                <div class="homepage-info">
 
-    <!-- Slideshow Widget -->
-    {{widget('responsiveslideshow', 'slideshow', {
-        'duration':'5',
-        'transSpeed': '2000',
-        'transType': 'fade',
-        'showButtons': true,
-        'showBullets': true,
-        'allowPause': true,
-        'allowLoop': false,
-        'crop': true,
-        'images':[
-    {
-        'imageHeight':'auto',
-        'imageWidth':'100%',
-        'url':asset('images/image-1.jpg'),
-        'title':'First slide title',
-    },
-    {
-        'imageHeight':'auto',
-        'imageWidth':'100%',
-        'url':asset('images/landscape-2.jpg'),
-        'title':'First slide title',
-    },
-    {
-        'imageHeight':'auto',
-        'imageWidth':'100%',
-        'url':asset('images/landscape-3.jpg'),
-        'title':'First slide title',
-    }
-    ]})|raw}}
+                    <div class="container">
+                        {{widget('content', 'sidebarcontent', {
+                            content: '<p>Lorem ipsum dolor sit amet...</p>'
+                        })|raw}}
+                    </div>
 
-    <!-- Main Zone -->
-    {{zone('main')|raw}}
+                </div>
+
+            </div>
+
+            <!-- Container -->
+            <div class="container">
+
+                <!-- Page Content -->
+                <section class="template-content">
+
+                <!-- Main Widget Zone -->
+                {{zone('main')|raw}}
+
+                </section>
+                <!-- End Page Content -->
+
+            </div><!-- End Container -->
+
+        </div><!-- End main-content -->
 
 </div>
 
-
-<!-- Footer -->
 {% include "includes/footer.twig" %}
-
 
 {% endblock %}

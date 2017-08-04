@@ -1,0 +1,345 @@
+// --------------------------------
+// Sky: plugin-blog.less
+// --------------------------------
+
+
+
+// --------------------------------
+// Blog Post List
+// --------------------------------
+
+
+.blogpostlist {
+
+    margin-bottom: 0px;
+    padding: 40px 0% 0px;
+    max-width: 1200px;
+    margin: 0px auto;
+
+    // Blog Article
+    // ---------------
+
+    .post-article {
+        background-color: @color-swatch1;
+        margin-bottom: 0;
+
+        .flex(@display: flex);
+        .justify-content(@justify: space-between);
+        .flex-wrap(@wrap: wrap);
+
+
+
+
+        &:nth-of-type(even) {
+            .post-image {
+                .flex-order(@order: 1);
+            }
+
+
+            .post-content {
+                .flex-order(@order: 0);
+            }
+
+
+            .post-footer {
+                text-align: left;
+            }
+        }
+    }
+
+
+
+        // Blog Image
+        // ---------------
+
+        .post-image {
+            -webkit-flex: 0 1 50%;
+                -ms-flex: 0 1 50%;
+                    flex: 0 1 50%;
+            .flex-order(@order: 0);
+
+
+            // Image Link
+            .image-link {
+                background-position: 0;
+                position: relative;
+                display: inline-block;
+                height: 300px;
+                width: 100%;
+                background-size: cover;
+                background-position: 50%;
+            }
+
+
+            .image {
+                width: 0;
+                height: 0;
+
+            }
+        }
+
+
+
+
+        // Blog Post Content
+        // -----------------
+
+        .post-content {
+            .flex(1 0 45%);
+            .flex-order(@order: 1);
+
+            padding: 0px 40px;
+            margin: 0;
+            @media @tablet {
+                padding: 20px 0px;
+            }
+            @media @mobile {
+                padding: 20px;
+            }
+        }
+
+
+
+
+        // Blog Post Title
+        // -----------------
+        .post-title,
+        .post-excerpt {
+              margin-bottom: 10px;
+        }
+
+        // Blog Post Footer
+        // ----------------
+
+        .post-footer {
+            .flex(0 1 100%);
+            .flex-order(@order: 2);
+
+            text-align: right;
+            @media @bp-tablet {
+                text-align: left;
+            }
+
+            .timestamp {
+                margin: 0 0 40px 40px;
+                font-size: 14px;
+                color: @paragraph-color;
+            }
+        }
+
+        .read-more {
+            margin: 10px 0;
+            border: 3px solid @color-swatch3;
+            border-radius: 100px;
+            display: inline-block;
+            padding: 15px 20px;
+            text-decoration: none;
+            &:hover {
+                background-color: @color__button--background--hover;
+                .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
+            }
+        }
+
+
+
+    // Tablet Breakpoint
+    // -----------------
+
+    @media @bp-tablet {
+
+
+        // Sets image and content above and below each other
+        .post-image,
+        .post-content {
+            -webkit-flex: 0 1 100%;
+                -ms-flex: 0 1 100%;
+                    flex: 0 1 100%;
+        }
+
+
+
+        // Blog Article
+        // ---------------
+
+        .post-article {
+        &:nth-of-type(even) {
+                .post-image {
+                    .flex-order(@order: 0);
+                }
+
+
+                .post-content {
+                    .flex-order(@order: 1);
+                }
+
+                .post-footer {
+                    text-align: right;
+                }
+            }
+        }
+
+
+
+
+        // Post Content
+        // ---------------
+
+        .post-content {
+            padding: 20px 0;
+        }
+
+
+
+
+        // Post Timestamp
+        // ---------------
+
+        .post-footer .timestamp {
+            margin: 0px 0 35px;
+            text-align: left;
+        }
+    }
+
+
+
+
+    // Post List Footer
+    // ----------------
+
+    .post-list-footer .pagination-list {
+
+        .flex(@display: flex);
+        .justify-content(@justify: space-between);
+
+
+    }
+
+}
+
+.blogpostlist__post-list-footer {
+    margin-top: 20px;
+}
+
+
+
+// --------------------------------
+// Blog Post Page
+// --------------------------------
+
+
+.blogpost {
+
+    padding: 10px 10% 10px;
+
+    @media @bp-tablet {
+        padding: 10px 5% 10px;
+    }
+
+    @media @bp-mobile {
+        padding: 10px 3% 10px;
+    }
+
+    .image-link {
+        text-align: center;
+    }
+
+    .post-content {
+        margin: 0 auto;
+        max-width: 800px;
+
+        p {
+            font-size: bkscale(@font__p--font-size, 1.05);
+            line-height: bkscale(@font__p--line-height, 1.1);
+            padding-bottom: 20px;
+        }
+
+
+        img {
+            margin: 15px 0;
+        }
+    }
+
+    .post-header {
+        margin-top: 30px;
+
+        h1 {
+            padding-bottom: 15px;
+        }
+    }
+
+
+    .post-footer {
+        margin: 25px auto 0;
+        max-width: 800px;
+    }
+
+
+    .post-attributes {
+        .flex-display;
+
+        @media @bp-mobile {
+            display: block;
+        }
+    }
+
+
+    .post-footer .timestamp {
+        border: 3px solid @color-swatch3;
+        border-radius: 100px;
+        display: inline-block;
+        padding: 15px 20px;
+        margin: 0;
+    }
+
+    .image {
+        max-height: 400px;
+    }
+
+    .post-category {
+        margin-bottom: 10px;
+        margin-right: 20px;
+    }
+
+    .category-title,
+    .tags-title {
+        font-weight: bold;
+    }
+
+}
+
+
+// Responsive Columns
+// ------------------
+
+
+.responsivecolumns {
+
+    .blogpostlist .post-article {
+        display: block;
+        width: 100%;
+    }
+
+    .blogpostlist .post-footer {
+        padding: 20px 0px 10px;
+    }
+
+    .blogpostlist .post-content {
+        padding: 0;
+        padding-top: 20px;
+    }
+
+    .blogpostlist .post-footer .timestamp {
+        margin: 40px 0px 40px;
+    }
+
+    .columns-three-left,
+    .columns-three-middle,
+    .columns-three-right,
+    .columns-four-first,
+    .columns-four-second,
+    .columns-four-third,
+    .columns-four-fourth {
+
+
+    }
+}
