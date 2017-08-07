@@ -244,7 +244,7 @@
             "color__button--background--hover": "@color-swatch4",
             "color__button--text": "@color-swatch4",
             "color__button--border": "#055a5b",
-            "color__button--text-hover": "#fff",
+            "color__button--text--hover": "#fff",
             "font__button--font-family": "@font-swatch7-font-family",
             "font__button--font-size": "@font-swatch7-font-size",
             "font__button--font-weight": "@font-swatch7-font-weight",
