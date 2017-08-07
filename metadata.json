@@ -5,10 +5,17 @@
     "widgetVersion":2,
     "pageTypes": ["home"],
     "templateType":"standard",
-    "images": [
-        "images/image-1.jpg",
-        "images/logo.svg",
-        "images/feature-bg.jpg"
+     "images":[
+        "images/sale-image-1.jpg",
+        "images/sale-image-2.jpg",
+        "images/sale-image-3.jpg",
+        "images/sale-image-4.jpg",
+        "images/sale-image-5.jpg",
+        "images/sale-image-6.jpg",
+        "images/sale-image-7.jpg",
+        "images/sale-image-8.jpg",
+        "images/sale-image-9.jpg"
+
     ],
     "colorSwatches":
     {
@@ -16,7 +23,7 @@
             "color1":"#ffffff",
             "color2":"#292C4C",
             "color3":"#feca00",
-            "color4":"#292C4C",
+            "color4":"#055a5b",
             "color5":"#7e7e7e",
             "color6":"#313131",
             "color7":"#E0E0E0"
@@ -205,10 +212,10 @@
             "color__feature-content--background" : "@color-swatch4",
             "color__feature-headline--text": "@font-swatch8-color",
             "color__feature-strapline--text": "@font-swatch9-color",
-            "color__feature-button--text": "@color-swatch3",
+            "color__feature-button--text": "#fff",
             "color__feature-button--background": "transparent",
-            "color__feature-button--background--hover": "@color-swatch3",
-            "color__feature-button--border": "#feca00",
+            "color__feature-button--background--hover": "#fff",
+            "color__feature-button--border": "#fff",
             "font__feature-headline--font-family" : "@font-swatch8-font-family",
             "font__feature-headline--font-size" : "@font-swatch8-font-size",
             "font__feature-headline--font-weight" : "@font-swatch8-font-weight",
@@ -234,9 +241,10 @@
         },
         "button": {
             "color__button--background": "transparent",
-            "color__button--background--hover": "@color-swatch3",
+            "color__button--background--hover": "@color-swatch4",
             "color__button--text": "@color-swatch4",
-            "color__button--border": "#feca00",
+            "color__button--border": "#055a5b",
+            "color__button--text-hover": "#fff",
             "font__button--font-family": "@font-swatch7-font-family",
             "font__button--font-size": "@font-swatch7-font-size",
             "font__button--font-weight": "@font-swatch7-font-weight",
