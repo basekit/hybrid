@@ -1,7 +1,7 @@
 {
     "name": "Hybrid",
-    "thumbnail": "hybrid-screenshot.jpg",
-    "screenshot": "hybrid-screenshot-high.jpg",
+    "thumbnail": "thumbnail.png",
+    "screenshot": "hybrid-screenshot.jpg",
     "widgetVersion":2,
     "pageTypes": ["home"],
     "templateType":"standard",

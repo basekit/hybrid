@@ -1,2 +1,2 @@
-# sky-template
+# Hybrid
 Amazon Japanese Template
